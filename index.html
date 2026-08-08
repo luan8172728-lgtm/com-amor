@@ -7,6 +7,7 @@
 <title>Para Milenete 💗</title>
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -26,20 +27,31 @@ body {
     overflow-x: hidden;
 }
 
-/* Fundo */
+/* FUNDO */
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
+
     background:
-        radial-gradient(circle at 20% 30%, rgba(255, 105, 170, .08), transparent 25%),
-        radial-gradient(circle at 80% 70%, rgba(255, 105, 170, .06), transparent 25%);
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 105, 170, .08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 105, 170, .06),
+            transparent 25%
+        );
+
     z-index: 0;
 }
 
-/* Corações flutuantes */
+
+/* CORAÇÕES */
 
 .heart {
     position: fixed;
@@ -51,6 +63,7 @@ body::before {
 }
 
 @keyframes subir {
+
     0% {
         transform: translateY(0) rotate(0deg);
         opacity: 0;
@@ -61,32 +74,47 @@ body::before {
     }
 
     100% {
-        transform: translateY(-115vh) rotate(360deg);
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+
         opacity: 0;
     }
+
 }
 
-/* Seções */
+
+/* SEÇÕES */
 
 section {
     min-height: 100vh;
+
     padding: 70px 20px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     position: relative;
     z-index: 1;
 }
 
-/* Cards */
+
+/* CARDS */
 
 .card {
+
     width: 100%;
     max-width: 760px;
+
     padding: 50px 42px;
 
-    background: rgba(35, 11, 25, .82);
-    border: 1px solid rgba(255, 166, 204, .2);
+    background:
+        rgba(35, 11, 25, .82);
+
+    border:
+        1px solid rgba(255, 166, 204, .2);
+
     border-radius: 28px;
 
     box-shadow:
@@ -99,6 +127,7 @@ section {
 }
 
 @keyframes aparecer {
+
     from {
         opacity: 0;
         transform: translateY(35px);
@@ -108,128 +137,204 @@ section {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
-/* Textos */
+
+/* TEXTOS */
 
 .small {
+
     color: #ff9fc8;
+
     text-transform: uppercase;
+
     letter-spacing: 3px;
+
     font-size: .75rem;
+
     margin-bottom: 20px;
 }
 
+
 h1 {
+
     text-align: center;
-    font-size: clamp(3.2rem, 11vw, 6rem);
+
+    font-size:
+        clamp(3.2rem, 11vw, 6rem);
+
     color: #ffb8d8;
-    text-shadow: 0 0 30px rgba(255, 100, 170, .4);
+
+    text-shadow:
+        0 0 30px
+        rgba(255, 100, 170, .4);
+
     margin-bottom: 25px;
 }
 
+
 h2 {
+
     text-align: center;
+
     color: #ffb8d8;
-    font-size: clamp(2rem, 6vw, 3rem);
+
+    font-size:
+        clamp(2rem, 6vw, 3rem);
+
     margin-bottom: 35px;
 }
 
+
 p {
+
     color: #f5dce7;
+
     font-size: 1.08rem;
+
     line-height: 1.9;
+
     margin-bottom: 22px;
 }
 
-/* Abertura */
+
+/* ABERTURA */
 
 .hero {
+
     text-align: center;
 }
 
+
 .hero p {
+
     max-width: 600px;
-    margin: 0 auto 25px;
+
+    margin:
+        0 auto 25px;
 }
 
+
 .date {
+
     color: #ff9fc8;
+
     margin: 30px 0;
+
     font-size: 1rem;
 }
 
-/* Botões */
+
+/* BOTÕES */
 
 .button {
+
     border: none;
+
     cursor: pointer;
 
     padding: 15px 28px;
+
     border-radius: 999px;
 
     color: white;
-    background: linear-gradient(
-        135deg,
-        #ff78ad,
-        #df3b7c
-    );
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff78ad,
+            #df3b7c
+        );
 
     font-size: 1rem;
+
     font-weight: bold;
 
     box-shadow:
-        0 8px 25px rgba(223, 59, 124, .3);
+        0 8px 25px
+        rgba(223, 59, 124, .3);
 
     transition: .3s ease;
 }
 
+
 .button:hover {
-    transform: translateY(-4px) scale(1.03);
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
 
     box-shadow:
-        0 12px 35px rgba(255, 90, 160, .45);
+        0 12px 35px
+        rgba(255, 90, 160, .45);
 }
 
+
 .button:active {
+
     transform: scale(.96);
 }
 
-/* Carta */
+
+/* CARTA */
 
 .letter {
+
     text-align: left;
 }
 
+
 .signature {
+
     margin-top: 35px;
+
     text-align: right;
+
     color: #ffb3d3;
+
     font-size: 1.2rem;
+
     line-height: 1.7;
 }
 
-/* Frase */
+
+/* FRASE */
 
 .quote {
+
     text-align: center;
 }
 
+
 .quote-text {
+
     color: #ffe0ec;
+
     font-style: italic;
-    font-size: clamp(1.8rem, 6vw, 3.2rem);
+
+    font-size:
+        clamp(1.8rem, 6vw, 3.2rem);
+
     line-height: 1.5;
+
     margin: 45px 0;
 }
 
+
 .quote-heart {
+
     font-size: 4rem;
+
     margin-bottom: 35px;
-    animation: pulsar 1.5s infinite;
+
+    animation:
+        pulsar 1.5s infinite;
 }
 
+
 @keyframes pulsar {
+
     0%, 100% {
         transform: scale(1);
     }
@@ -237,190 +342,299 @@ p {
     50% {
         transform: scale(1.18);
     }
+
 }
 
-/* Quiz */
+
+/* QUIZ */
 
 .quiz {
+
     text-align: center;
 }
 
+
 .progress {
+
     width: 100%;
+
     height: 9px;
+
     background: #351624;
+
     border-radius: 20px;
+
     overflow: hidden;
+
     margin-bottom: 25px;
 }
 
+
 .progress-bar {
+
     width: 0%;
+
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        #ff6fa8,
-        #ffc0da
-    );
-    transition: width .5s ease;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff6fa8,
+            #ffc0da
+        );
+
+    transition:
+        width .5s ease;
 }
 
+
 .question-number {
+
     color: #ff9fc8;
+
     margin-bottom: 20px;
 }
 
+
 #question {
+
     color: #fff0f6;
+
     font-size: 1.45rem;
+
     line-height: 1.5;
+
     margin-bottom: 30px;
 }
 
+
 .answers {
+
     display: grid;
+
     gap: 14px;
 }
 
+
 .answer {
+
     width: 100%;
+
     padding: 16px;
 
     border-radius: 15px;
-    border: 1px solid rgba(255, 159, 200, .2);
 
-    background: rgba(255,255,255,.035);
+    border:
+        1px solid
+        rgba(255, 159, 200, .2);
+
+    background:
+        rgba(255,255,255,.035);
+
     color: #fce5ee;
 
     font-size: 1rem;
+
     cursor: pointer;
 
     transition: .25s ease;
 }
 
+
 .answer:hover:not(:disabled) {
-    background: rgba(255, 105, 165, .13);
+
+    background:
+        rgba(255, 105, 165, .13);
+
     border-color: #ff8dbb;
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
 }
 
+
 .answer:disabled {
+
     cursor: default;
 }
 
+
 .answer.correct {
-    background: rgba(70, 200, 120, .18);
+
+    background:
+        rgba(70, 200, 120, .18);
+
     border-color: #69e69a;
+
     color: #caffdc;
 }
 
+
 .answer.wrong {
-    background: rgba(255, 70, 90, .18);
+
+    background:
+        rgba(255, 70, 90, .18);
+
     border-color: #ff6576;
+
     color: #ffd0d6;
 }
 
+
 .next {
+
     margin-top: 25px;
+
     display: none;
 }
 
-/* Resultado */
+
+/* RESULTADO */
 
 #result {
+
     display: none;
 }
 
+
 .score {
+
     text-align: center;
+
     font-size: 4rem;
+
     color: #ff9fc8;
+
     margin: 20px;
+
     font-weight: bold;
 }
 
+
 .result-message {
+
     text-align: center;
 }
 
-/* Final */
+
+/* FINAL */
 
 .final {
+
     text-align: center;
 }
 
+
 .big-heart {
+
     font-size: 7rem;
+
     margin: 20px;
-    animation: pulsar 1.5s infinite;
+
+    animation:
+        pulsar 1.5s infinite;
 }
 
+
 .final-message {
+
     font-size: 1.15rem;
 }
 
+
 .forever {
+
     margin-top: 40px;
+
     color: #ff9fc8;
+
     font-size: 1.5rem;
+
     font-weight: bold;
 }
 
-/* Confetes */
+
+/* CONFETES */
 
 .confetti {
+
     position: fixed;
+
     top: -20px;
+
     z-index: 10;
+
     pointer-events: none;
-    animation: cair linear forwards;
+
+    animation:
+        cair linear forwards;
 }
+
 
 @keyframes cair {
+
     to {
-        transform: translateY(110vh) rotate(720deg);
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
         opacity: 0;
     }
+
 }
 
-/* Celular */
+
+/* CELULAR */
 
 @media (max-width: 600px) {
 
     section {
+
         padding: 30px 15px;
     }
 
     .card {
+
         padding: 35px 23px;
+
         border-radius: 22px;
     }
 
     p {
+
         font-size: 1rem;
+
         line-height: 1.8;
     }
 
     h1 {
+
         font-size: 3.3rem;
     }
 
     .quote-text {
+
         font-size: 1.8rem;
     }
 
     .big-heart {
+
         font-size: 5rem;
     }
 
     #question {
+
         font-size: 1.25rem;
     }
+
 }
+
 </style>
 </head>
 
 <body>
+
 
 <!-- ================================================= -->
 <!-- ABERTURA -->
@@ -520,8 +734,11 @@ p {
         </p>
 
         <div class="signature">
+
             Com amor,<br>
+
             Luanete 💗
+
         </div>
 
         <div style="
@@ -557,8 +774,10 @@ p {
         </div>
 
         <div class="quote-text">
+
             "Entre milhões de pessoas,
             eu ainda escolheria você."
+
         </div>
 
         <div class="quote-heart">
@@ -593,10 +812,12 @@ p {
         <div id="quizGame">
 
             <div class="progress">
+
                 <div
                     class="progress-bar"
                     id="progress">
                 </div>
+
             </div>
 
             <div
@@ -677,34 +898,46 @@ p {
         </div>
 
         <p class="final-message">
+
             Se você chegou até aqui, então já descobriu uma coisa:
             esse site nunca foi realmente sobre o quiz.
+
         </p>
 
         <p class="final-message">
+
             Foi sobre encontrar uma maneira de colocar em um gesto,
             mesmo que pequeno, o quanto você é importante para mim.
+
         </p>
 
         <p class="final-message">
+
             Obrigado por todos os momentos, todas as conversas,
             todas as risadas e por ser exatamente quem você é.
+
         </p>
 
         <p class="final-message">
+
             Eu espero que ainda tenhamos muitos capítulos para escrever
             juntos. 💗
+
         </p>
 
         <div class="forever">
+
             Luanete ❤️ Milenete
+
         </div>
 
         <div style="
             margin-top:35px;
             color:#ff9fc8;
         ">
+
             06/11/2022 — ♾️
+
         </div>
 
     </div>
@@ -713,6 +946,7 @@ p {
 
 
 <script>
+
 
 /* ================================================= */
 /* NAVEGAÇÃO */
@@ -728,6 +962,7 @@ function irParaCarta() {
 
 }
 
+
 function irParaFrase() {
 
     document
@@ -737,6 +972,7 @@ function irParaFrase() {
         });
 
 }
+
 
 function irParaQuiz() {
 
@@ -750,10 +986,56 @@ function irParaQuiz() {
 
 
 /* ================================================= */
-/* QUIZ */
+/* PERGUNTAS DO QUIZ */
 /* ================================================= */
 
 const perguntas = [
+
+    {
+        pergunta:
+        "Qual foi nosso primeiro jogo de casal?",
+
+        respostas: [
+            "Wild Rift",
+            "It Takes Two",
+            "Split Fiction",
+            "The Sims 4"
+        ],
+
+        correta: 1
+    },
+
+
+    {
+        pergunta:
+        "Qual nosso gênero de filme favorito?",
+
+        respostas: [
+            "Ação",
+            "Terror",
+            "Comédia romântica",
+            "Ficção",
+            "Drama"
+        ],
+
+        correta: 2
+    },
+
+
+    {
+        pergunta:
+        "Qual artista é o favorito da Milenete?",
+
+        respostas: [
+            "BTS",
+            "Ariana Grande",
+            "Justin Bieber",
+            "Madonna"
+        ],
+
+        correta: 0
+    },
+
 
     {
         pergunta:
@@ -769,6 +1051,7 @@ const perguntas = [
         correta: 1
     },
 
+
     {
         pergunta:
         "Sobre o que a gente falou no começo?",
@@ -783,19 +1066,6 @@ const perguntas = [
         correta: 2
     },
 
-    {
-        pergunta:
-        "Qual grupo musical lembra a Milenete?",
-
-        respostas: [
-            "BTS",
-            "Queen",
-            "Linkin Park",
-            "ABBA"
-        ],
-
-        correta: 0
-    },
 
     {
         pergunta:
@@ -811,6 +1081,7 @@ const perguntas = [
         correta: 1
     },
 
+
     {
         pergunta:
         "Qual foi um dos momentos mais marcantes da nossa história?",
@@ -824,6 +1095,7 @@ const perguntas = [
 
         correta: 0
     },
+
 
     {
         pergunta:
@@ -839,6 +1111,7 @@ const perguntas = [
         correta: 1
     },
 
+
     {
         pergunta:
         "Quais são duas palavras que fazem parte das nossas maluquices?",
@@ -853,6 +1126,7 @@ const perguntas = [
         correta: 2
     },
 
+
     {
         pergunta:
         "Qual música lembra a gente?",
@@ -866,6 +1140,7 @@ const perguntas = [
 
         correta: 0
     },
+
 
     {
         pergunta:
@@ -884,8 +1159,14 @@ const perguntas = [
 ];
 
 
+/* ================================================= */
+/* VARIÁVEIS DO QUIZ */
+/* ================================================= */
+
 let perguntaAtual = 0;
+
 let pontuacao = 0;
+
 let respondeu = false;
 
 
@@ -900,20 +1181,25 @@ function mostrarPergunta() {
     const pergunta =
         perguntas[perguntaAtual];
 
+
     document
         .getElementById("questionNumber")
         .textContent =
         `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
+
 
     document
         .getElementById("question")
         .textContent =
         pergunta.pergunta;
 
+
     const answers =
         document.getElementById("answers");
 
+
     answers.innerHTML = "";
+
 
     pergunta.respostas.forEach(
         (resposta, indice) => {
@@ -921,9 +1207,14 @@ function mostrarPergunta() {
             const button =
                 document.createElement("button");
 
-            button.className = "answer";
 
-            button.textContent = resposta;
+            button.className =
+                "answer";
+
+
+            button.textContent =
+                resposta;
+
 
             button.onclick = () =>
                 escolherResposta(
@@ -931,24 +1222,29 @@ function mostrarPergunta() {
                     indice
                 );
 
+
             answers.appendChild(button);
 
         }
     );
 
+
     const progresso =
         (perguntaAtual /
         perguntas.length) * 100;
+
 
     document
         .getElementById("progress")
         .style.width =
         progresso + "%";
 
+
     document
         .getElementById("nextButton")
         .style.display =
         "none";
+
 }
 
 
@@ -956,46 +1252,67 @@ function mostrarPergunta() {
 /* ESCOLHER RESPOSTA */
 /* ================================================= */
 
-function escolherResposta(button, indice) {
+function escolherResposta(
+    button,
+    indice
+) {
 
     if (respondeu) return;
 
+
     respondeu = true;
+
 
     const correta =
         perguntas[perguntaAtual].correta;
 
+
     const botoes =
         document.querySelectorAll(".answer");
+
 
     botoes.forEach(
         (botao, i) => {
 
             botao.disabled = true;
 
+
             if (i === correta) {
-                botao.classList.add("correct");
+
+                botao.classList.add(
+                    "correct"
+                );
+
             }
 
         }
     );
 
+
     if (indice === correta) {
 
         pontuacao++;
 
-        button.classList.add("correct");
-
-    } else {
-
-        button.classList.add("wrong");
+        button.classList.add(
+            "correct"
+        );
 
     }
+
+    else {
+
+        button.classList.add(
+            "wrong"
+        );
+
+    }
+
 
     document
         .getElementById("nextButton")
         .style.display =
         "inline-block";
+
 }
 
 
@@ -1007,6 +1324,7 @@ function nextQuestion() {
 
     perguntaAtual++;
 
+
     if (
         perguntaAtual >=
         perguntas.length
@@ -1015,9 +1333,12 @@ function nextQuestion() {
         mostrarResultado();
 
         return;
+
     }
 
+
     mostrarPergunta();
+
 }
 
 
@@ -1032,43 +1353,58 @@ function mostrarResultado() {
         .style.display =
         "none";
 
+
     document
         .getElementById("result")
         .style.display =
         "block";
+
 
     document
         .getElementById("progress")
         .style.width =
         "100%";
 
+
     document
         .getElementById("score")
         .textContent =
         `${pontuacao}/${perguntas.length}`;
 
+
     let mensagem;
 
-    if (pontuacao === perguntas.length) {
+
+    if (
+        pontuacao ===
+        perguntas.length
+    ) {
 
         mensagem =
         "Você acertou tudo! 🥹❤️ Acho que você realmente lembra de nós.";
 
     }
 
-    else if (pontuacao >= 7) {
+
+    else if (
+        pontuacao >= 9
+    ) {
 
         mensagem =
         "Quase perfeito! Você conhece muito bem a nossa história. 💗";
 
     }
 
-    else if (pontuacao >= 5) {
+
+    else if (
+        pontuacao >= 6
+    ) {
 
         mensagem =
         "Você foi muito bem! Ainda temos algumas memórias para revisar juntos. 😂❤️";
 
     }
+
 
     else {
 
@@ -1077,15 +1413,17 @@ function mostrarResultado() {
 
     }
 
+
     document
         .getElementById("resultMessage")
         .textContent =
         mensagem;
+
 }
 
 
 /* ================================================= */
-/* FINAL */
+/* IR PARA O FINAL */
 /* ================================================= */
 
 function mostrarFinal() {
@@ -1095,6 +1433,7 @@ function mostrarFinal() {
         .scrollIntoView({
             behavior: "smooth"
         });
+
 
     criarConfetes();
 
@@ -1110,52 +1449,79 @@ function criarCoracao() {
     const heart =
         document.createElement("div");
 
-    heart.className = "heart";
+
+    heart.className =
+        "heart";
+
 
     heart.textContent =
         Math.random() > .5
         ? "❤️"
         : "💗";
 
+
     heart.style.left =
         Math.random() * 100 + "vw";
+
 
     heart.style.fontSize =
         (12 + Math.random() * 22) + "px";
 
+
     heart.style.animationDuration =
         (5 + Math.random() * 6) + "s";
 
-    document.body.appendChild(heart);
+
+    document.body.appendChild(
+        heart
+    );
+
 
     setTimeout(() => {
+
         heart.remove();
+
     }, 12000);
+
 }
 
-setInterval(criarCoracao, 700);
+
+setInterval(
+    criarCoracao,
+    700
+);
 
 
 /* ================================================= */
-/* CONFETES NO FINAL */
+/* CONFETES */
 /* ================================================= */
 
 function criarConfetes() {
 
     const simbolos = [
+
         "❤️",
         "💗",
         "💕",
         "✨",
         "💖"
+
     ];
 
-    for (let i = 0; i < 45; i++) {
+
+    for (
+        let i = 0;
+        i < 45;
+        i++
+    ) {
 
         const confetti =
             document.createElement("div");
 
-        confetti.className = "confetti";
+
+        confetti.className =
+            "confetti";
+
 
         confetti.textContent =
             simbolos[
@@ -1165,24 +1531,36 @@ function criarConfetes() {
                 )
             ];
 
+
         confetti.style.left =
             Math.random() * 100 + "vw";
+
 
         confetti.style.fontSize =
             (12 + Math.random() * 18) + "px";
 
+
         confetti.style.animationDuration =
             (3 + Math.random() * 4) + "s";
+
 
         confetti.style.animationDelay =
             Math.random() * 1.5 + "s";
 
-        document.body.appendChild(confetti);
+
+        document.body.appendChild(
+            confetti
+        );
+
 
         setTimeout(() => {
+
             confetti.remove();
+
         }, 8000);
+
     }
+
 }
 
 
