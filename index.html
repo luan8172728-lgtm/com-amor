@@ -1,874 +1,1198 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para a minha Milenete 💗</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>Para Milenete 💗</title>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-      font-family: "Georgia", serif;
-      background: linear-gradient(135deg, #180b18, #35132d, #5e2148);
-      color: #fff;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    /* Fundo */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #fff;
+    background:
+        radial-gradient(circle at 50% 0%, #4a1833 0%, #210d19 42%, #09060a 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
-    .background-hearts {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
+/* Fundo */
 
-    .heart {
-      position: absolute;
-      color: rgba(255, 150, 200, 0.25);
-      animation: subir linear infinite;
-      font-size: 20px;
-    }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 105, 170, .08), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255, 105, 170, .06), transparent 25%);
+    z-index: 0;
+}
 
-    @keyframes subir {
-      from {
-        transform: translateY(110vh) rotate(0deg);
+/* Corações flutuantes */
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    z-index: 0;
+    pointer-events: none;
+    animation: subir linear forwards;
+    opacity: 0;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0) rotate(0deg);
         opacity: 0;
-      }
+    }
 
-      20% {
+    10% {
+        opacity: .75;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Seções */
+
+section {
+    min-height: 100vh;
+    padding: 70px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Cards */
+
+.card {
+    width: 100%;
+    max-width: 760px;
+    padding: 50px 42px;
+
+    background: rgba(35, 11, 25, .82);
+    border: 1px solid rgba(255, 166, 204, .2);
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 60px rgba(255, 74, 145, .10),
+        inset 0 0 40px rgba(255, 100, 170, .025);
+
+    backdrop-filter: blur(14px);
+
+    animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
         opacity: 1;
-      }
+        transform: translateY(0);
+    }
+}
 
-      to {
-        transform: translateY(-15vh) rotate(360deg);
+/* Textos */
+
+.small {
+    color: #ff9fc8;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: .75rem;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(3.2rem, 11vw, 6rem);
+    color: #ffb8d8;
+    text-shadow: 0 0 30px rgba(255, 100, 170, .4);
+    margin-bottom: 25px;
+}
+
+h2 {
+    text-align: center;
+    color: #ffb8d8;
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 35px;
+}
+
+p {
+    color: #f5dce7;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
+
+/* Abertura */
+
+.hero {
+    text-align: center;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+}
+
+.date {
+    color: #ff9fc8;
+    margin: 30px 0;
+    font-size: 1rem;
+}
+
+/* Botões */
+
+.button {
+    border: none;
+    cursor: pointer;
+
+    padding: 15px 28px;
+    border-radius: 999px;
+
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #ff78ad,
+        #df3b7c
+    );
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(223, 59, 124, .3);
+
+    transition: .3s ease;
+}
+
+.button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 12px 35px rgba(255, 90, 160, .45);
+}
+
+.button:active {
+    transform: scale(.96);
+}
+
+/* Carta */
+
+.letter {
+    text-align: left;
+}
+
+.signature {
+    margin-top: 35px;
+    text-align: right;
+    color: #ffb3d3;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+/* Frase */
+
+.quote {
+    text-align: center;
+}
+
+.quote-text {
+    color: #ffe0ec;
+    font-style: italic;
+    font-size: clamp(1.8rem, 6vw, 3.2rem);
+    line-height: 1.5;
+    margin: 45px 0;
+}
+
+.quote-heart {
+    font-size: 4rem;
+    margin-bottom: 35px;
+    animation: pulsar 1.5s infinite;
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+/* Quiz */
+
+.quiz {
+    text-align: center;
+}
+
+.progress {
+    width: 100%;
+    height: 9px;
+    background: #351624;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #ff6fa8,
+        #ffc0da
+    );
+    transition: width .5s ease;
+}
+
+.question-number {
+    color: #ff9fc8;
+    margin-bottom: 20px;
+}
+
+#question {
+    color: #fff0f6;
+    font-size: 1.45rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.answers {
+    display: grid;
+    gap: 14px;
+}
+
+.answer {
+    width: 100%;
+    padding: 16px;
+
+    border-radius: 15px;
+    border: 1px solid rgba(255, 159, 200, .2);
+
+    background: rgba(255,255,255,.035);
+    color: #fce5ee;
+
+    font-size: 1rem;
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.answer:hover:not(:disabled) {
+    background: rgba(255, 105, 165, .13);
+    border-color: #ff8dbb;
+    transform: translateY(-2px);
+}
+
+.answer:disabled {
+    cursor: default;
+}
+
+.answer.correct {
+    background: rgba(70, 200, 120, .18);
+    border-color: #69e69a;
+    color: #caffdc;
+}
+
+.answer.wrong {
+    background: rgba(255, 70, 90, .18);
+    border-color: #ff6576;
+    color: #ffd0d6;
+}
+
+.next {
+    margin-top: 25px;
+    display: none;
+}
+
+/* Resultado */
+
+#result {
+    display: none;
+}
+
+.score {
+    text-align: center;
+    font-size: 4rem;
+    color: #ff9fc8;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.result-message {
+    text-align: center;
+}
+
+/* Final */
+
+.final {
+    text-align: center;
+}
+
+.big-heart {
+    font-size: 7rem;
+    margin: 20px;
+    animation: pulsar 1.5s infinite;
+}
+
+.final-message {
+    font-size: 1.15rem;
+}
+
+.forever {
+    margin-top: 40px;
+    color: #ff9fc8;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Confetes */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    z-index: 10;
+    pointer-events: none;
+    animation: cair linear forwards;
+}
+
+@keyframes cair {
+    to {
+        transform: translateY(110vh) rotate(720deg);
         opacity: 0;
-      }
     }
+}
 
-    /* Conteúdo */
+/* Celular */
 
-    .container {
-      position: relative;
-      z-index: 2;
-      width: min(900px, 92%);
-      margin: auto;
-    }
+@media (max-width: 600px) {
 
     section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 70px 0;
+        padding: 30px 15px;
     }
 
     .card {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(15px);
-      border-radius: 30px;
-      padding: 45px;
-      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+        padding: 35px 23px;
+        border-radius: 22px;
     }
 
-    /* Abertura */
-
-    .hero {
-      text-align: center;
-    }
-
-    .small {
-      color: #ffb9d8;
-      font-size: 1rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+    p {
+        font-size: 1rem;
+        line-height: 1.8;
     }
 
     h1 {
-      font-size: clamp(3rem, 9vw, 6rem);
-      color: #fff;
-      text-shadow: 0 0 30px rgba(255, 120, 190, 0.7);
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      line-height: 1.8;
-      color: #ffe5f1;
-    }
-
-    .date {
-      margin-top: 25px;
-      color: #ffafd1;
-      font-size: 1.1rem;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 35px;
-      padding: 15px 30px;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      color: white;
-      background: linear-gradient(135deg, #ff4f9a, #c72d75);
-      font-size: 1rem;
-      font-weight: bold;
-      box-shadow: 0 8px 25px rgba(255, 60, 150, 0.35);
-      transition: 0.3s;
-    }
-
-    .button:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 12px 35px rgba(255, 60, 150, 0.5);
-    }
-
-    /* Carta */
-
-    .letter h2,
-    .quiz h2,
-    .final h2 {
-      color: #ffb9d8;
-      font-size: 2.2rem;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .letter p {
-      font-size: 1.15rem;
-      line-height: 2;
-      color: #ffeaf3;
-      margin-bottom: 18px;
-      text-align: justify;
-    }
-
-    .signature {
-      text-align: right;
-      color: #ffb1d3;
-      font-size: 1.2rem;
-      margin-top: 35px;
-    }
-
-    /* Frase */
-
-    .quote {
-      text-align: center;
+        font-size: 3.3rem;
     }
 
     .quote-text {
-      font-size: clamp(1.7rem, 5vw, 3rem);
-      line-height: 1.4;
-      color: #fff;
-      font-style: italic;
-    }
-
-    .quote-heart {
-      font-size: 4rem;
-      margin-top: 30px;
-      animation: pulsar 1.5s infinite;
-    }
-
-    @keyframes pulsar {
-      0%, 100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.2);
-      }
-    }
-
-    /* Quiz */
-
-    .progress {
-      width: 100%;
-      height: 8px;
-      background: rgba(255,255,255,.12);
-      border-radius: 20px;
-      margin-bottom: 30px;
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #ff73ae, #ffb4d4);
-      transition: width .4s;
-    }
-
-    .question-number {
-      color: #ffafd1;
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    #question {
-      font-size: 1.5rem;
-      text-align: center;
-      line-height: 1.5;
-      margin-bottom: 30px;
-    }
-
-    .answers {
-      display: grid;
-      gap: 14px;
-    }
-
-    .answer {
-      width: 100%;
-      padding: 16px 20px;
-      border-radius: 15px;
-      border: 1px solid rgba(255,255,255,.15);
-      background: rgba(255,255,255,.07);
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: .25s;
-      text-align: left;
-    }
-
-    .answer:hover {
-      background: rgba(255, 100, 170, .2);
-      transform: translateX(5px);
-    }
-
-    .answer.correct {
-      background: rgba(50, 190, 120, .3);
-      border-color: #5ee6a2;
-    }
-
-    .answer.wrong {
-      background: rgba(230, 50, 80, .3);
-      border-color: #ff667d;
-    }
-
-    .next {
-      display: none;
-      margin: 25px auto 0;
-    }
-
-    /* Resultado */
-
-    #result {
-      display: none;
-      text-align: center;
-    }
-
-    .score {
-      font-size: 4rem;
-      color: #ffacd0;
-      margin: 20px;
-    }
-
-    .result-message {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      color: #ffe6f0;
-    }
-
-    /* Final */
-
-    .final {
-      text-align: center;
-    }
-
-    .final-message {
-      font-size: 1.25rem;
-      line-height: 2;
-      color: #ffe7f1;
+        font-size: 1.8rem;
     }
 
     .big-heart {
-      font-size: 6rem;
-      margin: 30px 0;
-      animation: pulsar 1.4s infinite;
+        font-size: 5rem;
     }
 
-    .forever {
-      font-size: 1.5rem;
-      color: #ffafd2;
-      margin-top: 25px;
-    }
-
-    /* Responsivo */
-
-    @media (max-width: 600px) {
-      .card {
-        padding: 28px 20px;
-        border-radius: 22px;
-      }
-
-      .letter p {
-        text-align: left;
-        font-size: 1.05rem;
-      }
-
-      #question {
+    #question {
         font-size: 1.25rem;
-      }
     }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Corações de fundo -->
-  <div class="background-hearts" id="hearts"></div>
+<!-- ================================================= -->
+<!-- ABERTURA -->
+<!-- ================================================= -->
 
-  <main class="container">
+<section id="inicio">
 
-    <!-- ABERTURA -->
-    <section>
-      <div class="card hero">
+    <div class="card hero">
 
-        <div class="small">uma pequena surpresa para você</div>
+        <div class="small">
+            uma pequena surpresa para você
+        </div>
 
-        <h1>Milenete 💗</h1>
+        <h1>
+            Milenete 💗
+        </h1>
 
         <p>
-          Eu fiz esse cantinho da internet especialmente para você.
-          Então respira fundo, sorri um pouquinho...
-          e vem descobrir o que preparei.
+            Eu fiz esse cantinho desse site feioso virar
+            um espaço só nosso, frofro. 💗
         </p>
 
         <div class="date">
-          Desde 06/11/2022 ✨
+            Desde 06/11/2022 ✨
         </div>
 
-        <button class="button" onclick="irParaCarta()">
-          Abrir minha surpresa 💌
+        <button
+            class="button"
+            onclick="irParaCarta()">
+
+            Abrir minha surpresa 💌
+
         </button>
 
-      </div>
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- CARTA -->
-    <section id="carta">
-      <div class="card letter">
+<!-- ================================================= -->
+<!-- CARTA -->
+<!-- ================================================= -->
 
-        <h2>Uma carta para você 💌</h2>
+<section id="carta">
+
+    <div class="card letter">
+
+        <h2>
+            Uma carta para você 💌
+        </h2>
 
         <p>
-          Milenete, às vezes eu fico pensando em como uma pessoa que eu
-          conheci através de uma tela conseguiu se tornar tão importante
-          para mim.
+            Milenete, às vezes eu fico pensando em como uma pessoa
+            que eu conheci através do nada conseguiu mudar tanto
+            a minha vidinha.
         </p>
 
         <p>
-          Tudo começou no Project Z, no dia 06/11/2022.
-          Naquele momento eu provavelmente não imaginava o quanto aquele
-          encontro mudaria meus dias.
+            Tudo começou no Project Z, no dia 06/11/2022.
+            Naquele momento, provavelmente nem o destino conseguia
+            imaginar as estrelas que ele estava unindo. ✨
         </p>
 
         <p>
-          Com o tempo, você deixou de ser apenas alguém com quem eu
-          conversava. Você virou alguém que eu queria ter por perto,
-          alguém que eu queria contar as coisas, compartilhar momentos
-          e fazer sorrir.
+            Com o tempo, você virou a minha vida, minha existência,
+            a minha razão de tentar crescer e ser algo maior.
         </p>
 
         <p>
-          E quando me perguntam o que eu amo em você, a resposta é
-          simplesmente: <strong>tudo.</strong>
+            E quando me perguntam o que eu amo em você, a resposta é
+            simplesmente: <strong>tudo.</strong>
         </p>
 
         <p>
-          Eu amo cada detalhe seu. As pequenas coisas, as grandes coisas,
-          seu jeito, suas manias, suas palavras e até aqueles detalhes
-          que talvez você nem perceba.
+            Eu amo cada detalhe seu. As pequenas coisas, as grandes coisas,
+            seu jeito, suas manias, suas palavras e até aqueles detalhes
+            que nem você gosta.
         </p>
 
         <p>
-          Eu não sei explicar perfeitamente o que você significa para mim,
-          mas sei que conversar com você deixa meus dias melhores e que
-          ter você na minha vida é algo que eu valorizo muito.
+            Eu não sei explicar perfeitamente o que você significa para mim,
+            mas sei que conversar com você deixa meus dias melhores e que
+            ter você na minha vida é algo que eu valorizo muito.
         </p>
 
         <p>
-          Então fiz esse pequeno site para guardar um pouquinho do que
-          sinto e, principalmente, para lembrar você de uma coisa:
+            Então fiz esse pequeno site para guardar um pouquinho do que
+            sinto e, principalmente, para lembrar você de uma coisa:
         </p>
 
-        <p style="text-align:center; font-size:1.5rem; color:#ffb3d3;">
-          você é muito especial para mim. ❤️
+        <p style="
+            text-align:center;
+            font-size:1.5rem;
+            color:#ffb3d3;
+        ">
+            você é muito especial para mim. ❤️
         </p>
 
         <div class="signature">
-          Com amor,<br>
-          Luanete 💗
+            Com amor,<br>
+            Luanete 💗
         </div>
 
-        <div style="text-align:center;">
-          <button class="button" onclick="irParaFrase()">
-            Continuar ✨
-          </button>
+        <div style="
+            text-align:center;
+            margin-top:30px;
+        ">
+
+            <button
+                class="button"
+                onclick="irParaFrase()">
+
+                Continuar ✨
+
+            </button>
+
         </div>
 
-      </div>
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- FRASE -->
-    <section id="frase">
-      <div class="card quote">
+<!-- ================================================= -->
+<!-- FRASE -->
+<!-- ================================================= -->
 
-        <div class="small">uma verdade</div>
+<section id="frase">
+
+    <div class="card quote">
+
+        <div class="small">
+            uma verdade
+        </div>
 
         <div class="quote-text">
-          "Entre milhões de pessoas,
-          eu ainda escolheria você."
+            "Entre milhões de pessoas,
+            eu ainda escolheria você."
         </div>
 
-        <div class="quote-heart">❤️</div>
+        <div class="quote-heart">
+            ❤️
+        </div>
 
-        <button class="button" onclick="irParaQuiz()">
-          Tenho um desafio para você 🎮
+        <button
+            class="button"
+            onclick="irParaQuiz()">
+
+            Tenho um desafio para você 🎮
+
         </button>
 
-      </div>
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- QUIZ -->
-    <section id="quizSection">
-      <div class="card quiz">
+<!-- ================================================= -->
+<!-- QUIZ -->
+<!-- ================================================= -->
 
-        <h2>Quanto você lembra de nós? 🎮</h2>
+<section id="quizSection">
+
+    <div class="card quiz">
+
+        <h2>
+            Quanto você lembra de nós? 🎮
+        </h2>
 
         <div id="quizGame">
 
-          <div class="progress">
-            <div class="progress-bar" id="progress"></div>
-          </div>
+            <div class="progress">
+                <div
+                    class="progress-bar"
+                    id="progress">
+                </div>
+            </div>
 
-          <div class="question-number" id="questionNumber"></div>
+            <div
+                class="question-number"
+                id="questionNumber">
+            </div>
 
-          <div id="question"></div>
+            <div id="question"></div>
 
-          <div class="answers" id="answers"></div>
+            <div
+                class="answers"
+                id="answers">
+            </div>
 
-          <button
-            class="button next"
-            id="nextButton"
-            onclick="nextQuestion()">
-            Próxima 💗
-          </button>
+            <button
+                class="button next"
+                id="nextButton"
+                onclick="nextQuestion()">
+
+                Próxima 💗
+
+            </button>
 
         </div>
 
+
+        <!-- RESULTADO -->
 
         <div id="result">
 
-          <div class="small">resultado</div>
+            <div class="small">
+                resultado
+            </div>
 
-          <div class="score" id="score"></div>
+            <div
+                class="score"
+                id="score">
+            </div>
 
-          <p class="result-message" id="resultMessage"></p>
+            <p
+                class="result-message"
+                id="resultMessage">
+            </p>
 
-          <button
-            class="button"
-            onclick="mostrarFinal()">
-            Ver minha mensagem final 💌
-          </button>
+            <button
+                class="button"
+                onclick="mostrarFinal()">
+
+                Ver minha mensagem final 💌
+
+            </button>
 
         </div>
 
-      </div>
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- FINAL -->
-    <section id="finalSection">
-      <div class="card final">
+<!-- ================================================= -->
+<!-- FINAL -->
+<!-- ================================================= -->
 
-        <div class="small">para sempre, se depender de mim</div>
+<section id="finalSection">
 
-        <h2>Milenete, você é meu presente. ❤️</h2>
+    <div class="card final">
 
-        <div class="big-heart">❤️</div>
+        <div class="small">
+            para sempre, se depender de mim
+        </div>
+
+        <h2>
+            Milenete, você é meu presente. ❤️
+        </h2>
+
+        <div class="big-heart">
+            ❤️
+        </div>
 
         <p class="final-message">
-          Se você chegou até aqui, então já descobriu uma coisa:
-          esse site nunca foi realmente sobre o quiz.
+            Se você chegou até aqui, então já descobriu uma coisa:
+            esse site nunca foi realmente sobre o quiz.
         </p>
 
-        <br>
-
         <p class="final-message">
-          Foi sobre encontrar uma maneira de colocar em palavras,
-          mesmo que pequenas, o quanto você é importante para mim.
+            Foi sobre encontrar uma maneira de colocar em um gesto,
+            mesmo que pequeno, o quanto você é importante para mim.
         </p>
 
-        <br>
-
         <p class="final-message">
-          Obrigado por todos os momentos, todas as conversas,
-          todas as risadas e por ser exatamente quem você é.
+            Obrigado por todos os momentos, todas as conversas,
+            todas as risadas e por ser exatamente quem você é.
         </p>
 
-        <br>
-
         <p class="final-message">
-          Eu espero que ainda tenhamos muitos capítulos para escrever
-          juntos. 💗
+            Eu espero que ainda tenhamos muitos capítulos para escrever
+            juntos. 💗
         </p>
 
         <div class="forever">
-          Luanete ❤️ Milenete
+            Luanete ❤️ Milenete
         </div>
 
-        <div style="margin-top:35px; color:#ff9fc8;">
-          06/11/2022 — ♾️
+        <div style="
+            margin-top:35px;
+            color:#ff9fc8;
+        ">
+            06/11/2022 — ♾️
         </div>
 
-      </div>
-    </section>
+    </div>
 
-  </main>
-
-
-  <script>
-
-    /*
-    ==========================================================
-      CONFIGURAÇÃO DO QUIZ
-    ==========================================================
-
-    Aqui você pode colocar as respostas verdadeiras de vocês.
-
-    IMPORTANTE:
-    - "question" = pergunta
-    - "options" = alternativas
-    - "correct" = número da resposta correta
-      0 = primeira
-      1 = segunda
-      2 = terceira
-      3 = quarta
-
-    Exemplo:
-
-    correct: 2
-
-    significa que a TERCEIRA alternativa é a correta.
-    */
-
-    const quiz = [
-
-      {
-        question: "Quais foram nossos primeiros mains no Wild Rift? 🎮",
-        options: [
-          "Coloque aqui a opção 1",
-          "Coloque aqui a opção 2",
-          "Coloque aqui a opção 3",
-          "Coloque aqui a opção 4"
-        ],
-        correct: 0
-      },
-
-      {
-        question: "Qual é o nosso filme favorito? 🎬",
-        options: [
-          "Coloque aqui o filme 1",
-          "Coloque aqui o filme 2",
-          "Coloque aqui o filme 3",
-          "Coloque aqui o filme 4"
-        ],
-        correct: 0
-      },
-
-      {
-        question: "Qual é a nossa Barbie favorita? 👱‍♀️💗",
-        options: [
-          "Barbie 1",
-          "Barbie 2",
-          "Barbie 3",
-          "Barbie 4"
-        ],
-        correct: 0
-      },
-
-      {
-        question: "Qual é o nosso couple favorito? 💕",
-        options: [
-          "Casal 1",
-          "Casal 2",
-          "Casal 3",
-          "Casal 4"
-        ],
-        correct: 0
-      },
-
-      {
-        question: "Qual é a nossa foto favorita? 📸",
-        options: [
-          "Foto 1",
-          "Foto 2",
-          "Foto 3",
-          "Foto 4"
-        ],
-        correct: 0
-      },
-
-      {
-        question: "Como foi o nosso primeiro beijo? 💋",
-        options: [
-          "Coloque aqui a opção 1",
-          "Coloque aqui a opção 2",
-          "Coloque aqui a opção 3",
-          "Coloque aqui a opção 4"
-        ],
-        correct: 0
-      },
-
-      {
-        question: "Como foi o nosso primeiro encontro? 🌹",
-        options: [
-          "Coloque aqui a opção 1",
-          "Coloque aqui a opção 2",
-          "Coloque aqui a opção 3",
-          "Coloque aqui a opção 4"
-        ],
-        correct: 0
-      }
-
-    ];
+</section>
 
 
-    /* =====================================================
-       FUNCIONAMENTO DO SITE
-       ===================================================== */
+<script>
 
-    let currentQuestion = 0;
-    let score = 0;
-    let answered = false;
+/* ================================================= */
+/* NAVEGAÇÃO */
+/* ================================================= */
 
+function irParaCarta() {
 
-    function criarCoracoes() {
-
-      const container = document.getElementById("hearts");
-
-      const simbolos = ["♥", "♡", "❤", "💗", "💖"];
-
-      for (let i = 0; i < 35; i++) {
-
-        const heart = document.createElement("div");
-
-        heart.className = "heart";
-
-        heart.innerHTML =
-          simbolos[Math.floor(Math.random() * simbolos.length)];
-
-        heart.style.left =
-          Math.random() * 100 + "%";
-
-        heart.style.animationDuration =
-          (7 + Math.random() * 10) + "s";
-
-        heart.style.animationDelay =
-          Math.random() * 8 + "s";
-
-        heart.style.fontSize =
-          (12 + Math.random() * 25) + "px";
-
-        container.appendChild(heart);
-      }
-    }
-
-
-    function irParaCarta() {
-
-      document
+    document
         .getElementById("carta")
         .scrollIntoView({
-          behavior: "smooth"
+            behavior: "smooth"
         });
-    }
 
+}
 
-    function irParaFrase() {
+function irParaFrase() {
 
-      document
+    document
         .getElementById("frase")
         .scrollIntoView({
-          behavior: "smooth"
+            behavior: "smooth"
         });
-    }
 
+}
 
-    function irParaQuiz() {
+function irParaQuiz() {
 
-      document
+    document
         .getElementById("quizSection")
         .scrollIntoView({
-          behavior: "smooth"
+            behavior: "smooth"
         });
 
-      carregarPergunta();
+}
+
+
+/* ================================================= */
+/* QUIZ */
+/* ================================================= */
+
+const perguntas = [
+
+    {
+        pergunta:
+        "Onde começou a nossa história?",
+
+        respostas: [
+            "Instagram",
+            "Project Z",
+            "WhatsApp",
+            "No meio da rua"
+        ],
+
+        correta: 1
+    },
+
+    {
+        pergunta:
+        "Sobre o que a gente falou no começo?",
+
+        respostas: [
+            "Sobre filmes de terror",
+            "Sobre futebol",
+            "Sobre como ela era linda e como eu queria namorar com ela",
+            "Sobre matemática"
+        ],
+
+        correta: 2
+    },
+
+    {
+        pergunta:
+        "Qual grupo musical lembra a Milenete?",
+
+        respostas: [
+            "BTS",
+            "Queen",
+            "Linkin Park",
+            "ABBA"
+        ],
+
+        correta: 0
+    },
+
+    {
+        pergunta:
+        "O que a gente gosta de fazer juntos?",
+
+        respostas: [
+            "Só dormir",
+            "Jogar e assistir",
+            "Correr uma maratona",
+            "Estudar física"
+        ],
+
+        correta: 1
+    },
+
+    {
+        pergunta:
+        "Qual foi um dos momentos mais marcantes da nossa história?",
+
+        respostas: [
+            "Nosso primeiro beijo",
+            "Nossa primeira prova juntos",
+            "Nossa primeira viagem para a Lua",
+            "Nossa primeira partida de futebol"
+        ],
+
+        correta: 0
+    },
+
+    {
+        pergunta:
+        "E o que aconteceu no nosso primeiro beijo? 😂",
+
+        respostas: [
+            "Começou a chover",
+            "A gente bateu os dentes",
+            "A gente saiu correndo",
+            "Nada aconteceu"
+        ],
+
+        correta: 1
+    },
+
+    {
+        pergunta:
+        "Quais são duas palavras que fazem parte das nossas maluquices?",
+
+        respostas: [
+            "Amor e carinho",
+            "Oi e tchau",
+            "Sitzplinker e fugging",
+            "Pizza e hambúrguer"
+        ],
+
+        correta: 2
+    },
+
+    {
+        pergunta:
+        "Qual música lembra a gente?",
+
+        respostas: [
+            "Best Part",
+            "Perfect",
+            "Love Story",
+            "Yellow"
+        ],
+
+        correta: 0
+    },
+
+    {
+        pergunta:
+        "Qual é uma data muito importante para a Milenete?",
+
+        respostas: [
+            "06/11/2022",
+            "22/03/2007",
+            "25/12/2000",
+            "14/02/2010"
+        ],
+
+        correta: 1
     }
 
+];
 
-    function carregarPergunta() {
 
-      answered = false;
+let perguntaAtual = 0;
+let pontuacao = 0;
+let respondeu = false;
 
-      const q = quiz[currentQuestion];
 
-      document.getElementById("questionNumber").innerText =
-        `Pergunta ${currentQuestion + 1} de ${quiz.length}`;
+/* ================================================= */
+/* MOSTRAR PERGUNTA */
+/* ================================================= */
 
-      document.getElementById("question").innerText =
-        q.question;
+function mostrarPergunta() {
 
-      const answers =
+    respondeu = false;
+
+    const pergunta =
+        perguntas[perguntaAtual];
+
+    document
+        .getElementById("questionNumber")
+        .textContent =
+        `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
+
+    document
+        .getElementById("question")
+        .textContent =
+        pergunta.pergunta;
+
+    const answers =
         document.getElementById("answers");
 
-      answers.innerHTML = "";
+    answers.innerHTML = "";
 
-      q.options.forEach((option, index) => {
+    pergunta.respostas.forEach(
+        (resposta, indice) => {
 
-        const button =
-          document.createElement("button");
+            const button =
+                document.createElement("button");
 
-        button.className = "answer";
+            button.className = "answer";
 
-        button.innerText = option;
+            button.textContent = resposta;
 
-        button.onclick = () =>
-          responder(index);
+            button.onclick = () =>
+                escolherResposta(
+                    button,
+                    indice
+                );
 
-        answers.appendChild(button);
+            answers.appendChild(button);
 
-      });
+        }
+    );
 
-      document.getElementById("nextButton").style.display =
+    const progresso =
+        (perguntaAtual /
+        perguntas.length) * 100;
+
+    document
+        .getElementById("progress")
+        .style.width =
+        progresso + "%";
+
+    document
+        .getElementById("nextButton")
+        .style.display =
         "none";
-
-      const porcentagem =
-        (currentQuestion / quiz.length) * 100;
-
-      document.getElementById("progress").style.width =
-        porcentagem + "%";
-    }
+}
 
 
-    function responder(index) {
+/* ================================================= */
+/* ESCOLHER RESPOSTA */
+/* ================================================= */
 
-      if (answered) return;
+function escolherResposta(button, indice) {
 
-      answered = true;
+    if (respondeu) return;
 
-      const q = quiz[currentQuestion];
+    respondeu = true;
 
-      const botoes =
+    const correta =
+        perguntas[perguntaAtual].correta;
+
+    const botoes =
         document.querySelectorAll(".answer");
 
-      botoes.forEach((button, i) => {
+    botoes.forEach(
+        (botao, i) => {
 
-        button.disabled = true;
+            botao.disabled = true;
 
-        if (i === q.correct) {
-          button.classList.add("correct");
+            if (i === correta) {
+                botao.classList.add("correct");
+            }
+
         }
+    );
 
-        if (i === index && index !== q.correct) {
-          button.classList.add("wrong");
-        }
+    if (indice === correta) {
 
-      });
+        pontuacao++;
 
-      if (index === q.correct) {
-        score++;
-      }
+        button.classList.add("correct");
 
-      document.getElementById("nextButton").style.display =
-        "block";
+    } else {
+
+        button.classList.add("wrong");
+
     }
 
+    document
+        .getElementById("nextButton")
+        .style.display =
+        "inline-block";
+}
 
-    function nextQuestion() {
 
-      currentQuestion++;
+/* ================================================= */
+/* PRÓXIMA PERGUNTA */
+/* ================================================= */
 
-      if (currentQuestion < quiz.length) {
+function nextQuestion() {
 
-        carregarPergunta();
+    perguntaAtual++;
 
-      } else {
+    if (
+        perguntaAtual >=
+        perguntas.length
+    ) {
 
         mostrarResultado();
 
-      }
+        return;
     }
 
+    mostrarPergunta();
+}
 
-    function mostrarResultado() {
 
-      document.getElementById("quizGame").style.display =
+/* ================================================= */
+/* RESULTADO */
+/* ================================================= */
+
+function mostrarResultado() {
+
+    document
+        .getElementById("quizGame")
+        .style.display =
         "none";
 
-      document.getElementById("result").style.display =
+    document
+        .getElementById("result")
+        .style.display =
         "block";
 
-      document.getElementById("score").innerText =
-        `${score}/${quiz.length} 💗`;
+    document
+        .getElementById("progress")
+        .style.width =
+        "100%";
 
-      let mensagem = "";
+    document
+        .getElementById("score")
+        .textContent =
+        `${pontuacao}/${perguntas.length}`;
 
-      if (score === quiz.length) {
+    let mensagem;
 
-        mensagem =
-          "Meu Deus! Você acertou tudo! 😭❤️ Você realmente conhece cada pedacinho da nossa história.";
-
-      } else if (score >= quiz.length * 0.7) {
-
-        mensagem =
-          "Quase tudo! 🥹❤️ Acho que você conhece nosso mundinho tão bem quanto eu.";
-
-      } else if (score >= quiz.length * 0.4) {
+    if (pontuacao === perguntas.length) {
 
         mensagem =
-          "Tudo bem... eu vou deixar você estudar mais sobre nós. 😂💗 Mas ainda assim, você continua sendo minha pessoa favorita.";
+        "Você acertou tudo! 🥹❤️ Acho que você realmente lembra de nós.";
 
-      } else {
-
-        mensagem =
-          "Hmmmm... acho que vamos precisar criar muitos mais momentos juntas para você decorar tudo. 😌❤️";
-
-      }
-
-      document.getElementById("resultMessage").innerText =
-        mensagem;
     }
 
+    else if (pontuacao >= 7) {
 
-    function mostrarFinal() {
+        mensagem =
+        "Quase perfeito! Você conhece muito bem a nossa história. 💗";
 
-      document
+    }
+
+    else if (pontuacao >= 5) {
+
+        mensagem =
+        "Você foi muito bem! Ainda temos algumas memórias para revisar juntos. 😂❤️";
+
+    }
+
+    else {
+
+        mensagem =
+        "Hmmmm... acho que vamos ter que criar mais memórias juntos. 😂💗";
+
+    }
+
+    document
+        .getElementById("resultMessage")
+        .textContent =
+        mensagem;
+}
+
+
+/* ================================================= */
+/* FINAL */
+/* ================================================= */
+
+function mostrarFinal() {
+
+    document
         .getElementById("finalSection")
         .scrollIntoView({
-          behavior: "smooth"
+            behavior: "smooth"
         });
+
+    criarConfetes();
+
+}
+
+
+/* ================================================= */
+/* CORAÇÕES FLUTUANTES */
+/* ================================================= */
+
+function criarCoracao() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.textContent =
+        Math.random() > .5
+        ? "❤️"
+        : "💗";
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (12 + Math.random() * 22) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 6) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 12000);
+}
+
+setInterval(criarCoracao, 700);
+
+
+/* ================================================= */
+/* CONFETES NO FINAL */
+/* ================================================= */
+
+function criarConfetes() {
+
+    const simbolos = [
+        "❤️",
+        "💗",
+        "💕",
+        "✨",
+        "💖"
+    ];
+
+    for (let i = 0; i < 45; i++) {
+
+        const confetti =
+            document.createElement("div");
+
+        confetti.className = "confetti";
+
+        confetti.textContent =
+            simbolos[
+                Math.floor(
+                    Math.random() *
+                    simbolos.length
+                )
+            ];
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.fontSize =
+            (12 + Math.random() * 18) + "px";
+
+        confetti.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        confetti.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 8000);
     }
+}
 
 
-    criarCoracoes();
+/* ================================================= */
+/* INICIAR QUIZ */
+/* ================================================= */
 
-  </script>
+mostrarPergunta();
+
+</script>
 
 </body>
 </html>
